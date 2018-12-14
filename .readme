@@ -1,0 +1,4 @@
+1. git pull https://github.com/nitinmaram/lb_swagger.git
+2. npm install
+3. node .
+4. go to localhost:3000/editor
