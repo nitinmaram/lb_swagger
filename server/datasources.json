@@ -1,0 +1,25 @@
+{
+  "countryByCurrencyCode": {
+    "name": "countryByCurrencyCode",
+    "baseURL": "https://restcountries.eu/rest/v2/currency",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "functions": {
+          "getCountries": [
+            "cur"
+          ]
+        },
+        "template": {
+          "method": "GET",
+          "url": "https://restcountries.eu/rest/v2/currency/{cur}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          }
+        }
+      }
+    ]
+  }
+}

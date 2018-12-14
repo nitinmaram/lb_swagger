@@ -1,0 +1,28 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: CountryByCurency
+basePath: /api
+schemes:
+- "http"
+host: 'localhost:3000'
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /countries/getCountries/{cur}:
+    get:
+      tags:
+        - Countries
+      summary: Get List of Countries For a Currency Code.
+      parameters:
+        - name: cur
+          in: path
+          description: 'Currency Code'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Request was successful
+      deprecated: false
