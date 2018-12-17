@@ -16,9 +16,5 @@
   "countries": {
     "dataSource": "countryByCurrencyCode",
     "public": true
-  },
-  "note": {
-    "dataSource": "countryByCurrencyCode",
-    "public": true
   }
 }

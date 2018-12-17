@@ -1,12 +1,12 @@
 'use strict';
 
 module.exports = function(Countries) {
-  Countries.afterRemote('getCountries', function(ctx, country, next) {
-    console.log(ctx.result, "ctx");
+  Countries.afterRemote('getCountries', (res, country, next) => {
+    console.log(res.result, "res");
     console.log(country, "country");
-		var countries = ctx.result;
+		var countries = res.result;
     var arr = []
-		countries.map(function(country) {
+		countries.map((country) => {
 			arr.push({
         "CountryName": country.name,
         "CountryCode": country.alpha3Code,
@@ -14,7 +14,7 @@ module.exports = function(Countries) {
         "CurrenciesAccepted": country.currencies
       })
 		});
-		ctx.result = arr;
+		res.result = arr;
 		next();
 	});
 };
