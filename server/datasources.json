@@ -7,7 +7,7 @@
     "operations": [
       {
         "functions": {
-          "getCountries": [
+          "byCurrencyCode": [
             "cur"
           ]
         },

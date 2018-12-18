@@ -1,10 +1,6 @@
 'use strict';
 
-module.exports = function(Countries) {
-  Countries.afterRemote('getCountries', (res, country, next) => {
-    console.log(res.result, "res");
-    console.log(country, "country");
-		var countries = res.result;
+module.exports = (countries) => {
     var arr = []
 		countries.map((country) => {
 			arr.push({
@@ -14,7 +10,5 @@ module.exports = function(Countries) {
         "CurrenciesAccepted": country.currencies
       })
 		});
-		res.result = arr;
-		next();
-	});
+    return arr;
 };

@@ -1,6 +1,6 @@
 {
-  "name": "countries",
-  "plural": "countries",
+  "name": "Currency",
+  "plural": "currencies",
   "base": "Model",
   "idInjection": true,
   "options": {
