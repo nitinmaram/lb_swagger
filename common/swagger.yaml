@@ -11,13 +11,13 @@ consumes:
 produces:
   - application/json
 paths:
-  /currencies/{currencyCode}:
+  /currencies/byCurrencyCode/{currencyCode}:
     get:
       tags:
         - Countries
       summary: Get List of Countries For a Currency Code.
       parameters:
-        - name: cur
+        - name: currencyCode
           in: path
           description: 'Currency Code'
           required: true
@@ -25,4 +25,29 @@ paths:
       responses:
         '200':
           description: Request was successful
+          schema:
+            $ref: "#/definitions/Currency"
       deprecated: false
+definitions:
+  Currency:
+    type: "array"
+    items:
+          type: "object"
+    properties:
+      CountryName:
+        type: "string"
+      CountryCode:
+        type: "string"
+      CountryCapital:
+        type: "string"
+      CurrenciesAccepted:
+        type: "array"
+        items:
+              type: "object"
+              properties:
+                code:
+                  type: "string"
+                name:
+                  type: "string"
+                symbol:
+                  type: "string"
